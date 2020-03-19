@@ -3,7 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 
 const FavoriteScreen = props => {
   return (
-    <View>
+    <View style={styles.screen}>
       <Text>The FavoriteScreen!</Text>
     </View>
   );
@@ -12,7 +12,7 @@ const FavoriteScreen = props => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justtifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
   },
 });

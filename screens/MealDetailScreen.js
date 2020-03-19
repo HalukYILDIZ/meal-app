@@ -1,10 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 
 const MealDetailScreen = props => {
   return (
-    <View>
+    <View style={styles.screen}>
       <Text>The MealDetailScreen!</Text>
+      <Button
+        title="MealDetailScreen"
+        onPress={() => {
+          //props.navigation.navigate('MealDetail');
+          props.navigation.push('MealDetail'); //aynı sayfada farklı içerikle navigasyon sağlar navigate den farklı olarak
+        }}
+      />
     </View>
   );
 };
@@ -12,7 +19,7 @@ const MealDetailScreen = props => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justtifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
   },
 });

@@ -1,21 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {StyleSheet, View, Text} from 'react-native';
 
+import MealsNavigator from './navigation/MealsNavigator';
+
 const App = () => {
-  return (
-    <NavigationContainer>
-      <Text>App</Text>
-    </NavigationContainer>
-  );
+  return <MealsNavigator></MealsNavigator>;
 };
 
 const styles = StyleSheet.create({});

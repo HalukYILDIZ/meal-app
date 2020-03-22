@@ -6,11 +6,11 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
-import {withOrientation} from 'react-navigation';
+//import {withOrientation} from 'react-navigation';
 const MealItem = props => {
   return (
     <View style={styles.mealItem}>
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity onPress={props.onSelectMeal}>
         <View style={{...styles.mealRow, ...styles.mealHeader}}>
           <ImageBackground source={{uri: props.image}} style={styles.BGImage}>
             <View style={styles.titleContainer}>

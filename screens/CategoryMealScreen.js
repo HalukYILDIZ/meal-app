@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 
 import {CATEGORIES, MEALS} from '../data/dummy-data';
 import Colors from '../constants/Colors';
@@ -14,12 +14,19 @@ const CategoryMealScreen = props => {
         complexity={itemData.item.complexity}
         affordability={itemData.item.affordability}
         image={itemData.item.imageUrl}
+        onSelectMeal={() => {
+          props.navigation.navigate({
+            routeName: 'MealDetail',
+            params: {
+              mealId: itemData.item.id,
+            },
+          });
+        }}
       />
     );
   };
 
   const catId = props.navigation.getParam('categoryId');
-  const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
   const displayedMeals = MEALS.filter(
     meal => meal.categoryIds.indexOf(catId) >= 0,
   );
@@ -30,6 +37,7 @@ const CategoryMealScreen = props => {
         data={displayedMeals}
         keyExtractor={(item, index) => item.id}
         renderItem={renderMealItem}
+        // eslint-disable-next-line react-native/no-inline-styles
         style={{width: '100%', padding: 10}}
       />
     </View>

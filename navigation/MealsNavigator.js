@@ -56,27 +56,24 @@ const tabScreenConfig = {
     },
   },
   Favorites: {
-    screen: FavoriteScreen,
+    screen: FavNavigator,
     navigationOptions: {
       tabBarIcon: tabinfo => {
         return <Icon name="star" size={25} color={tabinfo.tintColor} />;
       },
-      tabBarColor: Colors.accentColor,
+      tabBarColor: 'Colors.accentColor',
     },
   },
 };
 
-const MealsFavTabNavigator =
-  Platform.OS === 'android'
-    ? createMaterialBottomTabNavigator(tabScreenConfig, {
-        //activeTintColor: Colors.accentColor,
-        // activeColor: Colors.accentColor,
-        shifting: true,
-      })
-    : createBottomTabNavigator(tabScreenConfig, {
-        tabBarOptions: {
-          activeTintColor: Colors.accentColor,
-        },
-      });
+const MealsFavTabNavigator = createBottomTabNavigator(tabScreenConfig, {
+  tabBarOptions: {
+    activeTintColor: 'white',
+    tabStyle: {backgroundColor: Colors.primaryColor},
+    barStyle: {
+      backgroundColor: Colors.primaryColor,
+    },
+  },
+});
 
 export default createAppContainer(MealsFavTabNavigator);

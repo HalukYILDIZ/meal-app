@@ -1,5 +1,3 @@
-import {NativeViewGestureHandler} from 'react-native-gesture-handler';
-
 class Meal {
   constructor(
     id,

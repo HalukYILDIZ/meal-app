@@ -9,6 +9,8 @@ const FavoriteScreen = props => {
   );
 };
 
+FavoriteScreen.navigationOptions = {};
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,

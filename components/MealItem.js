@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
+
+import DefaultText from './DefaultText';
 //import {withOrientation} from 'react-navigation';
 const MealItem = props => {
   return (
@@ -20,9 +22,9 @@ const MealItem = props => {
         </View>
 
         <View style={{...styles.mealRow, ...styles.mealDetail}}>
-          <Text>{props.duration}m</Text>
-          <Text>{props.complexity.toUpperCase()}</Text>
-          <Text>{props.affordability.toUpperCase()}</Text>
+          <DefaultText>{props.duration}m</DefaultText>
+          <DefaultText>{props.complexity.toUpperCase()}</DefaultText>
+          <DefaultText>{props.affordability.toUpperCase()}</DefaultText>
         </View>
       </TouchableOpacity>
     </View>

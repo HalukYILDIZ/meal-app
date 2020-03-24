@@ -10,10 +10,10 @@ import mealsReducer from './store/reducers/meals';
 
 enableScreens(); // ekran optimizasyonu sağlıyor
 
-const store = createStore(rootReducer);
 const rootReducer = combineReducers({
   meals: mealsReducer,
 });
+const store = createStore(rootReducer);
 
 const App = () => {
   return (
